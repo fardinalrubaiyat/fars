@@ -9124,3 +9124,578 @@ html.lenis {
   }
 
 }
+/* =========================
+   SHOWCASE VIDEO
+   ========================= */
+
+.video-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+
+/* Play Button */
+
+.video-placeholder .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 76px;
+  height: 76px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #9b3cff;
+  color: #ffffff;
+
+  font-size: 28px;
+  line-height: 1;
+
+  padding-left: 5px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 25px rgba(155, 60, 255, 0.55),
+    0 0 60px rgba(155, 60, 255, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.video-placeholder .play:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+
+  box-shadow:
+    0 0 35px rgba(155, 60, 255, 0.75),
+    0 0 80px rgba(155, 60, 255, 0.35);
+}
+/* =========================================================
+   PROJECT 01 — REAL REEL THUMBNAIL
+   ========================================================= */
+
+.reel-thumbnail {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  position: absolute;
+  inset: 0;
+}
+
+
+/* Make sure the reel video area can contain the thumbnail */
+.reel-video {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Keep the play button above the thumbnail */
+.reel-video .reel-play {
+  position: absolute;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   REEL VIDEO MODAL
+   ========================================================= */
+
+.reel-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.88);
+
+  backdrop-filter: blur(8px);
+}
+
+
+/* Modal becomes visible */
+.reel-video-modal.active {
+  display: flex;
+}
+
+
+/* Vertical YouTube player */
+.reel-video-modal-content {
+  position: relative;
+
+  width: min(420px, 90vw);
+  height: min(750px, 88vh);
+
+  background: #000;
+
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 50px rgba(168, 85, 247, 0.30);
+}
+
+
+/* YouTube iframe */
+.reel-video-modal-content iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: none;
+}
+
+
+/* Close button */
+.reel-video-modal-close {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  z-index: 10;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.70);
+
+  color: #ffffff;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.reel-video-modal-close:hover {
+  transform: scale(1.1);
+
+  background: rgba(168, 85, 247, 0.75);
+
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .reel-video-modal {
+    padding: 12px;
+  }
+
+  .reel-video-modal-content {
+    width: min(92vw, 390px);
+    height: min(82vh, 700px);
+
+    border-radius: 12px;
+  }
+
+}
+/* =========================================================
+   RECENT WORK / REELS — PROJECT THUMBNAILS
+   ========================================================= */
+
+.reel-video {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Thumbnail image */
+.reel-thumbnail {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 1;
+}
+
+/* Keep play button above thumbnail */
+.reel-video .reel-play {
+  position: absolute;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   REEL VIDEO MODAL
+   ========================================================= */
+
+.reel-video-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.88);
+
+  backdrop-filter: blur(8px);
+}
+
+
+.reel-video-modal.active {
+  display: flex;
+}
+
+
+/* Vertical YouTube player */
+.reel-video-modal-content {
+  position: relative;
+
+  width: min(420px, 90vw);
+  height: min(750px, 88vh);
+
+  background: #000;
+
+  border: 1px solid rgba(168, 85, 247, 0.45);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 50px rgba(168, 85, 247, 0.30);
+}
+
+
+.reel-video-modal-content iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: none;
+}
+
+
+/* Close button */
+.reel-video-modal-close {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  z-index: 10;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.70);
+
+  color: #ffffff;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.reel-video-modal-close:hover {
+  transform: scale(1.1);
+
+  background: rgba(168, 85, 247, 0.75);
+
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .reel-video-modal {
+    padding: 12px;
+  }
+
+  .reel-video-modal-content {
+    width: min(92vw, 390px);
+
+    height: min(82vh, 700px);
+
+    border-radius: 12px;
+  }
+
+}
+/* =========================================================
+   WATCH ON YOUTUBE BUTTON
+   ========================================================= */
+
+.reel-watch-youtube {
+  position: absolute;
+
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  color: #000000;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/*
+   This becomes useful when YouTube displays
+   its unavailable/blocked message.
+*/
+.reel-watch-youtube:hover {
+  transform: translateY(-2px);
+}
+/* =========================================================
+   LONG-FORM VIDEO THUMBNAILS
+   ========================================================= */
+
+.longform-thumbnail {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+/* Keep the play button above the thumbnail */
+.longform-placeholder .longform-play {
+    z-index: 5;
+}
+
+
+/* =========================================================
+   LONG-FORM VIDEO MODAL
+   ========================================================= */
+
+.longform-video-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.longform-video-modal.active {
+    display: flex;
+}
+
+
+/* Main video window */
+.longform-video-modal-content {
+    position: relative;
+
+    width: min(960px, 92vw);
+
+    aspect-ratio: 16 / 9;
+
+    background: #000;
+
+    border: 1px solid rgba(180, 92, 255, 0.50);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 60px rgba(150, 60, 255, 0.30);
+}
+
+
+/* YouTube iframe */
+.longform-video-modal-content iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: none;
+}
+
+
+/* Close button */
+.longform-video-modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    z-index: 10;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.longform-video-modal-close:hover {
+    transform: scale(1.1);
+
+    background: rgba(150, 60, 255, 0.80);
+
+    border-color: rgba(255, 255, 255, 0.60);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .longform-video-modal {
+        padding: 12px;
+    }
+
+    .longform-video-modal-content {
+        width: 94vw;
+
+        border-radius: 12px;
+    }
+
+    .longform-video-modal-close {
+        width: 36px;
+        height: 36px;
+
+        top: 8px;
+        right: 8px;
+
+        font-size: 20px;
+    }
+}
